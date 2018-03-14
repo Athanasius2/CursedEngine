@@ -1,0 +1,9 @@
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\bin\Debug\CursedEditor.exe.config
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\bin\Debug\CursedEditor.exe
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\bin\Debug\CursedEditor.pdb
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.csprojResolveAssemblyReference.cache
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.Form1.resources
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.Properties.Resources.resources
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.csproj.GenerateResource.Cache
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.exe
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.pdb
