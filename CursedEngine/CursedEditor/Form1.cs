@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace CursedEditor
 {
     public partial class Form1 : Form
     {
+        Cursed.CursedConsole cCons;
         public Form1()
         {
             InitializeComponent();
+            cCons = new Cursed.CursedConsole();
+            cCons.init();
             
         }
 
@@ -35,12 +39,19 @@ namespace CursedEditor
 
         private void ConsolePanel_Paint(object sender, PaintEventArgs e)
         {
-            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+            BufferedGraphicsContext context;
+            BufferedGraphics buffer;
+            context = BufferedGraphicsManager.Current;
             System.Drawing.Graphics formGraphics;
             formGraphics = ConsolePanel.CreateGraphics();
-            formGraphics.FillRectangle(myBrush, new Rectangle(0, 0, 800, 400));
-            myBrush.Dispose();
-            formGraphics.Dispose();
+            buffer = context.Allocate(formGraphics, ConsolePanel.DisplayRectangle);
+            cCons.draw(0, 0, buffer.Graphics);
+            buffer.Render(formGraphics);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Process.Start("..\\..\\..\\Cursed\\bin\\Debug\\Cursed.exe");
         }
     }
 }

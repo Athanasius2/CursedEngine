@@ -1,0 +1,5 @@
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\bin\Debug\Cursed.exe.config
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\bin\Debug\Cursed.exe
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\bin\Debug\Cursed.pdb
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\obj\Debug\Cursed.exe
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\obj\Debug\Cursed.pdb
