@@ -100,6 +100,7 @@ namespace CursedCore
             SolidBrush b = new SolidBrush(Color.Black);
             Font f = new Font("Lucida Console", 8);
             for (int i = 0; i < charMap.GetLength(0); i++)
+            { 
                 for (int j = 0; j < charMap.GetLength(1); j++)
                 {
                     b.Color = FromColor(charMap[i, j].bgColor);
@@ -107,6 +108,7 @@ namespace CursedCore
                     b.Color = FromColor(charMap[i, j].charColor);
                     g.DrawString(charMap[i, j].ch.ToString(), f, b, new PointF(x + (i * charWidth), y + (j * charHeight)));
                 }
+            }   
             b.Dispose();
             f.Dispose();
         }
@@ -114,17 +116,20 @@ namespace CursedCore
         public void draw(int x, int y)
         {
             for (int i = 0; i < charMap.GetLength(0); i++)
+            {
                 for (int j = 0; j < charMap.GetLength(1); j++)
                 {
                     Console.BackgroundColor = charMap[i, j].bgColor;
                     Console.ForegroundColor = charMap[i, j].charColor;
                     Console.Out.Write(charMap[i, j].ch);
                 }
+            }
             Console.WriteLine();
         }
 
         private static Color FromColor(ConsoleColor c)
         {
+            Color result;
             int[] cColors = {
                         0x000000, //Black = 0
                         0x000080, //DarkBlue = 1
@@ -143,7 +148,9 @@ namespace CursedCore
                         0xFFFF00, //Yellow = 14
                         0xFFFFFF  //White = 15
                     };
-            return Color.FromArgb(cColors[(int)c]);
+            result = Color.FromArgb(cColors[(int)c]);
+            result = Color.FromArgb(0xFF, result.R, result.G, result.B);
+            return result;
         }
 
     }

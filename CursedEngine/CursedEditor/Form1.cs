@@ -47,6 +47,7 @@ namespace CursedEditor
             formGraphics = ConsolePanel.CreateGraphics();
             buffer = context.Allocate(formGraphics, ConsolePanel.DisplayRectangle);
             cCons.draw(0, 0, buffer.Graphics);
+            //cCons.draw(0, 0, formGraphics);
             buffer.Render(formGraphics);
         }
 
