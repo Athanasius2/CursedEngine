@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursed
+namespace CursedCore
 {
-    class StaticDisplay : Display
+    public class InteractiveDisplay : Display
     {
         public override void render()
         {

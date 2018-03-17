@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace Cursed
+namespace CursedCore
 {
     /// <summary>
     /// A data structure to keep track of display information on the console.
     /// </summary>
-    class CursedConsole
+    public class CursedConsole
     {
         /// <summary>
         /// Contains color and character for each position in the console.
         /// </summary>
         public struct CursedChar
         {
-            public Color bgColor;
-            public Color charColor;
+            public ConsoleColor bgColor;
+            public ConsoleColor charColor;
             public char ch;
         }
 
@@ -47,8 +47,8 @@ namespace Cursed
         public void init()
         {
             CursedChar c = new CursedChar();
-            c.bgColor = Color.Green;
-            c.charColor = Color.LightGray;
+            c.bgColor = ConsoleColor.Green;
+            c.charColor = ConsoleColor.Gray;
             c.ch = '1';
 
             for (int i = 0; i < charMap.GetLength(0); i++)
@@ -60,12 +60,12 @@ namespace Cursed
             }
         }
 
-        public void setBgColor(int x, int y, Color c)
+        public void setBgColor(int x, int y, ConsoleColor c)
         {
             charMap[x, y].bgColor = c;
         }
 
-        public void setCharColor(int x, int y, Color c)
+        public void setCharColor(int x, int y, ConsoleColor c)
         {
             charMap[x, y].charColor = c;
         }
@@ -102,13 +102,48 @@ namespace Cursed
             for (int i = 0; i < charMap.GetLength(0); i++)
                 for (int j = 0; j < charMap.GetLength(1); j++)
                 {
-                    b.Color = charMap[i, j].bgColor;
+                    b.Color = FromColor(charMap[i, j].bgColor);
                     g.FillRectangle(b, new Rectangle(x + (i * charWidth), y + (j * charHeight) - 4, charWidth, charHeight));
-                    b.Color = charMap[i, j].charColor;
+                    b.Color = FromColor(charMap[i, j].charColor);
                     g.DrawString(charMap[i, j].ch.ToString(), f, b, new PointF(x + (i * charWidth), y + (j * charHeight)));
                 }
             b.Dispose();
             f.Dispose();
+        }
+
+        public void draw(int x, int y)
+        {
+            for (int i = 0; i < charMap.GetLength(0); i++)
+                for (int j = 0; j < charMap.GetLength(1); j++)
+                {
+                    Console.BackgroundColor = charMap[i, j].bgColor;
+                    Console.ForegroundColor = charMap[i, j].charColor;
+                    Console.Out.Write(charMap[i, j].ch);
+                }
+            Console.WriteLine();
+        }
+
+        private static Color FromColor(ConsoleColor c)
+        {
+            int[] cColors = {
+                        0x000000, //Black = 0
+                        0x000080, //DarkBlue = 1
+                        0x008000, //DarkGreen = 2
+                        0x008080, //DarkCyan = 3
+                        0x800000, //DarkRed = 4
+                        0x800080, //DarkMagenta = 5
+                        0x808000, //DarkYellow = 6
+                        0xC0C0C0, //Gray = 7
+                        0x808080, //DarkGray = 8
+                        0x0000FF, //Blue = 9
+                        0x00FF00, //Green = 10
+                        0x00FFFF, //Cyan = 11
+                        0xFF0000, //Red = 12
+                        0xFF00FF, //Magenta = 13
+                        0xFFFF00, //Yellow = 14
+                        0xFFFFFF  //White = 15
+                    };
+            return Color.FromArgb(cColors[(int)c]);
         }
 
     }

@@ -7,3 +7,5 @@ C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug
 C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.csproj.GenerateResource.Cache
 C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.exe
 C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\obj\Debug\CursedEditor.pdb
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\bin\Debug\CursedCore.dll
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedEditor\bin\Debug\CursedCore.pdb

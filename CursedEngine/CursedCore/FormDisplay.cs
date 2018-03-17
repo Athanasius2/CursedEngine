@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursed
+namespace CursedCore
 {
-    class FormDisplay : Display
+    public class FormDisplay : Display
     {
         public override void render()
         {

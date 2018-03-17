@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursed
+namespace CursedCore
 {
-    abstract class Display
+    public class Level
     {
-        public abstract void render();
+        private List<Room> rooms;
+
+        public void Load()
+        {
+
+        }
     }
 }

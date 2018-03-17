@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursed
+namespace CursedCore
 {
-    class Level
+    public class StaticDisplay : Display
     {
-        private List<Room> rooms;
-
-        public void Load()
+        public override void render()
         {
-
+            throw new NotImplementedException();
         }
     }
 }

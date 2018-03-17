@@ -8,16 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CursedCore;
 
 namespace CursedEditor
 {
     public partial class Form1 : Form
     {
-        Cursed.CursedConsole cCons;
+        CursedConsole cCons;
         public Form1()
         {
             InitializeComponent();
-            cCons = new Cursed.CursedConsole();
+            cCons = new CursedConsole();
             cCons.init();
             
         }

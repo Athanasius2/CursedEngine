@@ -1,0 +1,5 @@
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedCore\bin\Debug\CursedCore.dll
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedCore\bin\Debug\CursedCore.pdb
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedCore\obj\Debug\CursedCore.csprojResolveAssemblyReference.cache
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedCore\obj\Debug\CursedCore.dll
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\CursedCore\obj\Debug\CursedCore.pdb

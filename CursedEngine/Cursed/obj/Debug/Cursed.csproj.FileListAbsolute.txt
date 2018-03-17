@@ -3,3 +3,6 @@ C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\bin\Debug\Curse
 C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\bin\Debug\Cursed.pdb
 C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\obj\Debug\Cursed.exe
 C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\obj\Debug\Cursed.pdb
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\bin\Debug\CursedCore.dll
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\bin\Debug\CursedCore.pdb
+C:\Users\gabek\Documents\GitHub\CursedEngine\CursedEngine\Cursed\obj\Debug\Cursed.csprojResolveAssemblyReference.cache
