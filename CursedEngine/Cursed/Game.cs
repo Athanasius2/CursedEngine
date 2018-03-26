@@ -10,6 +10,8 @@ namespace Cursed
     class Game
     {
         private CursedConsole cCons;
+
+
         static void Main(string[] args)
         {
             new Game();

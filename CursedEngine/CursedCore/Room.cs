@@ -8,6 +8,24 @@ namespace CursedCore
 {
     public class Room
     {
-        List<Display> displays;
+        private List<Display> displays;
+        private string name;
+
+        public Room()
+        {
+            this.displays = new List<Display>();
+            this.name = "Room";
+        }
+
+        public Room(string n)
+        {
+            new Room();
+            this.name = n;
+        }
+
+        public string getName()
+        {
+            return this.name;
+        }
     }
 }
