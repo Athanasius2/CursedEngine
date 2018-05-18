@@ -16,6 +16,7 @@ namespace CursedCore
         public Room()
         {
             this.displays = new List<Display>();
+            actors = new List<Actor>();
             this.name = "Room";
         }
 
@@ -25,9 +26,22 @@ namespace CursedCore
             this.name = n;
         }
 
-        public string getName()
+        /// <summary>
+        /// Checks to see if the room name is unique in a level
+        /// </summary>
+        /// <param name="n">Room name</param>
+        /// <param name="l">Level</param>
+        /// <returns></returns>
+        public static bool isUnique(string n, Level l)
         {
-            return this.name;
+            if (n == "") return false;
+            else if (l.getRoom(n) == null) return true;
+            else return false;
+        }
+
+        public void addActor(Actor a)
+        {
+            actors.Add(a);
         }
 
         public Actor getActor(string a)
