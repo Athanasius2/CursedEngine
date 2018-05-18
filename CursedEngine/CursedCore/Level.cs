@@ -12,7 +12,11 @@ namespace CursedCore
 
         //TODO Create system for setting original names for levels
         private static List<string> names;
-        private string name;
+        public string name
+        {
+            get; set;
+        }
+          
 
         // TODO maybe add an exception if the level was not created correctly (e.g. it is a duplicate name)
         public Level()
@@ -46,9 +50,16 @@ namespace CursedCore
             rooms.Add(r);
         }
 
-        public string getName()
+        public Room getRoom(string r)
         {
-            return this.name;
+            foreach (Room x in rooms)
+            {
+                if (x.name.Equals(r))
+                {
+                    return x;
+                }
+            }
+            return null;
         }
     }
 }

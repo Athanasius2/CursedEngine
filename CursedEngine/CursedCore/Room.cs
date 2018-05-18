@@ -9,7 +9,9 @@ namespace CursedCore
     public class Room
     {
         private List<Display> displays;
-        private string name;
+        private List<Actor> actors;
+        public string text { get; set; }
+        public string name { get; set; }
 
         public Room()
         {
@@ -26,6 +28,18 @@ namespace CursedCore
         public string getName()
         {
             return this.name;
+        }
+
+        public Actor getActor(string a)
+        {
+            foreach (Actor x in actors)
+            {
+                if (x.name.Equals(a))
+                {
+                    return x;
+                }
+            }
+            return null;
         }
     }
 }

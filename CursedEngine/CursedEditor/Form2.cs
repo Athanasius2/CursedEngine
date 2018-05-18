@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace CursedEditor
 {
-    /// <summary>
-    /// Form for creating a new game
-    /// </summary>
-    public partial class NewGame : Form
+    public partial class Form2 : Form
     {
-        public NewGame()
+        public Form2()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

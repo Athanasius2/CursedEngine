@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CursedEditor
+namespace Cursed
 {
-    /// <summary>
-    /// Form for creating a new game
-    /// </summary>
-    public partial class NewGame : Form
+    public partial class CursedWindow : Form
     {
-        public NewGame()
+        public CursedWindow()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

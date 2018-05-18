@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action.cs" />
+    <Compile Include="Actor.cs" />
     <Compile Include="CursedConsole.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="FormDisplay.cs" />

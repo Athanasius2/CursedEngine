@@ -23,7 +23,6 @@ namespace CursedEditor
             cCons = new CursedConsole();
             cCons.init();
             game = new Game();
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -41,18 +40,6 @@ namespace CursedEditor
             
         }
 
-        private void ConsolePanel_Paint(object sender, PaintEventArgs e)
-        {
-            BufferedGraphicsContext context;
-            BufferedGraphics buffer;
-            context = BufferedGraphicsManager.Current;
-            System.Drawing.Graphics formGraphics;
-            formGraphics = ConsolePanel.CreateGraphics();
-            buffer = context.Allocate(formGraphics, ConsolePanel.DisplayRectangle);
-            cCons.draw(0, 0, buffer.Graphics);
-            //cCons.draw(0, 0, formGraphics);
-            buffer.Render(formGraphics);
-        }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -65,30 +52,81 @@ namespace CursedEditor
             newGame.Show();
         }
 
-        // TODO we need to implement a way to rename the tree node so that it will also be renamed in te game object
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
+       
         // TODO User should have a chance to rename node after it is created
         // TODO User should be able to change the order of the nodes 
         private void newLevelButton_Click(object sender, EventArgs e)
         {
-            Level l = new Level("Sample Level");
+            Level l = new Level(Prompt.RenameDialog("New Level", "Enter new level name"));
+            TreeNode node = new TreeNode();
+            node.Text = l.name;
             game.addLevel(l);
-            gameMap.Nodes.Add(l.getName());
+            gameMap.Nodes.Add(node);
         }
 
         // TODO this is a pretty crappy way to add a new room.  clean this up later.
         private void newRoomButton_Click(object sender, EventArgs e)
         {
-            Room r = new Room("Sample Room");
-            TreeNode node = gameMap.SelectedNode;
-            game.getLevel(node.Text).addRoom(r);
-            node.Nodes.Add(r.getName());
+            if (gameMap.SelectedNode != null)
+            {
+                if (gameMap.SelectedNode.Level == 0)
+                {
+                    Level l = game.getLevel(gameMap.SelectedNode.Text);
+                    Room r = new Room(Prompt.RenameDialog("New Room", "Enter new room name"));
+                    l.addRoom(r);
+                    TreeNode node = new TreeNode();
+                    node.Text = r.name;
+                    gameMap.SelectedNode.Nodes.Add(node);
+                }
+            }
+        }
+        
 
-            
+        private void splitContainer3_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void addActionButton_Click(object sender, EventArgs e)
+        {
+            actionGridView.Rows.Add();
+        }
+
+        private void roomText_KeyUp(object sender, EventArgs e)
+        {
+            TreeNode node = gameMap.SelectedNode;
+            string room = node.Text;
+            Room r = game.getLevel(node.Parent.Text).getRoom(room);
+            r.text = roomText.Text;
+        }
+
+        private void gameMap_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeNode node = e.Node;
+            if (node != null)
+            {
+                switch (node.Level)
+                {
+                    case 0:
+                        Level l = game.getLevel(node.Text);
+                        break;
+                    case 1:
+                        Room r = game.getLevel(node.Parent.Text).getRoom(node.Text);
+                        if (r.text != null)
+                        {
+                            roomText.Text = r.text;
+                        }
+                        break;
+                    case 2:
+                        Actor a = game.getLevel(node.Parent.Parent.Text).getRoom(node.Parent.Text).getActor(node.Text);
+                        break;
+                }
+            }
         }
     }
 }

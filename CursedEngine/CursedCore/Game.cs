@@ -15,6 +15,15 @@ namespace CursedCore
         /// A list that contains all the levels in the game
         /// </summary>
         private List<Level> levels;
+        private int width
+        {
+            get { return width; }
+        }
+        private int height
+        {
+            get { return height; }
+        }
+         
 
         public Game()
         {
@@ -45,7 +54,7 @@ namespace CursedCore
         {
             foreach (Level x in levels)
             {
-                if (x.getName().Equals(l))
+                if (x.name.Equals(l))
                 {
                     return x;
                 }
