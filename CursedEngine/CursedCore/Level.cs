@@ -30,10 +30,6 @@ namespace CursedCore
 
         public Level(string s)
         {
-            if (names != null)
-            {
-                names = new List<string>();
-            }
             this.name = s;
             this.rooms = new List<Room>();
         }
@@ -64,13 +60,6 @@ namespace CursedCore
                 }
             }
             return null;
-        }
-
-        public static bool isUnique(string n, Game g)
-        {
-            if (n == "") return false;
-            else if (g.getLevel(n) == null) return true;
-            else return false;
         }
     }
 }
