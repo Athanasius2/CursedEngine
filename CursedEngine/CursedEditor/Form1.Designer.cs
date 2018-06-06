@@ -38,6 +38,9 @@
             this.textEditor = new System.Windows.Forms.SplitContainer();
             this.roomText = new System.Windows.Forms.RichTextBox();
             this.actionGridView = new System.Windows.Forms.DataGridView();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Keys = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.addActionButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -47,11 +50,8 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.newLevelButton = new System.Windows.Forms.ToolStripButton();
             this.newRoomButton = new System.Windows.Forms.ToolStripButton();
-            this.newDisplayButton = new System.Windows.Forms.ToolStripButton();
+            this.newActorButton = new System.Windows.Forms.ToolStripButton();
             this.gameMap = new System.Windows.Forms.TreeView();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Keys = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -173,6 +173,24 @@
             this.actionGridView.Size = new System.Drawing.Size(802, 274);
             this.actionGridView.TabIndex = 1;
             // 
+            // Action
+            // 
+            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            // 
+            // Keys
+            // 
+            this.Keys.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Keys.HeaderText = "Keys";
+            this.Keys.Name = "Keys";
+            // 
+            // Code
+            // 
+            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Code.HeaderText = "Code";
+            this.Code.Name = "Code";
+            // 
             // toolStrip3
             // 
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -247,7 +265,7 @@
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newLevelButton,
             this.newRoomButton,
-            this.newDisplayButton});
+            this.newActorButton});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(121, 25);
@@ -276,43 +294,27 @@
             this.newRoomButton.ToolTipText = "Create new room";
             this.newRoomButton.Click += new System.EventHandler(this.newRoomButton_Click);
             // 
-            // newDisplayButton
+            // newActorButton
             // 
-            this.newDisplayButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newDisplayButton.Image = ((System.Drawing.Image)(resources.GetObject("newDisplayButton.Image")));
-            this.newDisplayButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newDisplayButton.Name = "newDisplayButton";
-            this.newDisplayButton.Size = new System.Drawing.Size(23, 22);
-            this.newDisplayButton.Text = "toolStripButton3";
+            this.newActorButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newActorButton.Image = ((System.Drawing.Image)(resources.GetObject("newActorButton.Image")));
+            this.newActorButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newActorButton.Name = "newActorButton";
+            this.newActorButton.Size = new System.Drawing.Size(23, 22);
+            this.newActorButton.Text = "New Actor";
+            this.newActorButton.Click += new System.EventHandler(this.newActorButton_Click);
             // 
             // gameMap
             // 
             this.gameMap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameMap.HideSelection = false;
             this.gameMap.Location = new System.Drawing.Point(3, 28);
             this.gameMap.Name = "gameMap";
             this.gameMap.Size = new System.Drawing.Size(118, 291);
             this.gameMap.TabIndex = 0;
             this.gameMap.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.gameMap_AfterSelect);
-            // 
-            // Action
-            // 
-            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            // 
-            // Keys
-            // 
-            this.Keys.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Keys.HeaderText = "Keys";
-            this.Keys.Name = "Keys";
-            // 
-            // Code
-            // 
-            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Code.HeaderText = "Code";
-            this.Code.Name = "Code";
             // 
             // Form1
             // 
@@ -371,7 +373,7 @@
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton newLevelButton;
         private System.Windows.Forms.ToolStripButton newRoomButton;
-        private System.Windows.Forms.ToolStripButton newDisplayButton;
+        private System.Windows.Forms.ToolStripButton newActorButton;
         private System.Windows.Forms.SplitContainer textEditor;
         private System.Windows.Forms.RichTextBox roomText;
         internal System.Windows.Forms.TreeView gameMap;

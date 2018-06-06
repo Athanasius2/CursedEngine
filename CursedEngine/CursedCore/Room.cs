@@ -22,7 +22,8 @@ namespace CursedCore
 
         public Room(string n)
         {
-            new Room();
+            this.displays = new List<Display>();
+            actors = new List<Actor>();
             this.name = n;
         }
 
@@ -39,6 +40,13 @@ namespace CursedCore
             else return false;
         }
 
+        public bool IsUniqueActor(string a)
+        {
+            if (a == "") return false;
+            else if (this.getActor(a) == null) return true;
+            else return false;
+        }
+
         public void addActor(Actor a)
         {
             actors.Add(a);
@@ -46,7 +54,8 @@ namespace CursedCore
 
         public Actor getActor(string a)
         {
-            foreach (Actor x in actors)
+            if (actors.Count == 0) return null;
+            else foreach (Actor x in actors)
             {
                 if (x.name.Equals(a))
                 {

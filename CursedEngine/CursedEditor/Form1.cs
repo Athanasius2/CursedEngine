@@ -95,7 +95,31 @@ namespace CursedEditor
                 }
             }
         }
-        
+
+        private void newActorButton_Click(object sender, EventArgs e)
+        {
+            if (gameMap.SelectedNode != null)
+            {
+                if (gameMap.SelectedNode.Level == 1)
+                {
+                    string name = "";
+                    Level l = game.getLevel(gameMap.SelectedNode.Parent.Text);
+                    Room r = l.getRoom(gameMap.SelectedNode.Text);
+                    while (!r.IsUniqueActor(name))
+                    {
+                        name = Prompt.RenameDialog("New Actor", "Enter new actor name");
+                        if (name == null)
+                            return;
+                    }
+                    Actor a = new Actor(name, new List<CursedCore.Action>());
+                    r.addActor(a);
+                    TreeNode node = new TreeNode();
+                    node.Text = a.name;
+                    gameMap.SelectedNode.Nodes.Add(node);
+                }
+            }
+        }
+
 
         private void splitContainer3_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -147,5 +171,7 @@ namespace CursedEditor
                 }
             }
         }
+
+        
     }
 }
