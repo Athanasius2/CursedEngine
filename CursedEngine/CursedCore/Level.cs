@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace CursedCore
 {
-    public class Level
+    public class Level : Actor
     {
         private List<Room> rooms;
 
         //TODO Create system for setting original names for levels
         private static List<string> names;
-        public string name
-        {
-            get; set;
-        }
           
 
         // TODO maybe add an exception if the level was not created correctly (e.g. it is a duplicate name)

@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace CursedCore
 {
-    public class Room
+    public class Room : Actor
     {
         private List<Display> displays;
         private List<Actor> actors;
-        public string text { get; set; }
-        public string name { get; set; }
 
         public Room()
         {

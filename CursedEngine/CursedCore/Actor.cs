@@ -11,6 +11,12 @@ namespace CursedCore
         public string name { set; get; }
         public List<Action> actions { get; }
 
+        public Actor()
+        {
+            name = "default";
+            actions = new List<Action>();
+        }
+
         public Actor(string n, List<Action> a)
         {
             name = n;

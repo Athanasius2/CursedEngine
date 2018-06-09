@@ -208,7 +208,7 @@
             this.addActionButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addActionButton.Name = "addActionButton";
             this.addActionButton.Size = new System.Drawing.Size(23, 22);
-            this.addActionButton.Text = "toolStripButton2";
+            this.addActionButton.Text = "Create New Action";
             this.addActionButton.ToolTipText = "Add Action";
             this.addActionButton.Click += new System.EventHandler(this.addActionButton_Click);
             // 
